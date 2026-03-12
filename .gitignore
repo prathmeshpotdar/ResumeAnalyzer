@@ -1,0 +1,43 @@
+# Node
+node_modules/
+dist/
+build/
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Java
+target/
+!.mvn/wrapper/maven-wrapper.jar
+*.class
+*.log
+*.ctxt
+*.mtj.tmp/
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+backend.log
+build.log
+out.log
+run.log
+compile_out.txt
+run_out.txt
+build2.txt
+build3.txt
+error_trace.txt
+deps.txt
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*.DS_Store
+Thumbs.db
