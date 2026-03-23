@@ -81,6 +81,36 @@ const ResumeBuilderWorkspace = ({ formData }) => {
         </div>
       )}
 
+      {/* Projects */}
+      {formData.projects && formData.projects.length > 0 && (
+        <div className="mb-4">
+          <h2 className="text-[17px] font-bold border-b border-black pb-0.5 mb-1">Projects</h2>
+          <div className="space-y-3 text-[14px]">
+            {formData.projects.map((proj, idx) => (
+              <div key={idx}>
+                <div className="flex justify-between items-baseline">
+                  <div>
+                    <span className="font-bold">{proj.title}</span>
+                    {proj.link && (
+                      <>
+                        <span className="mx-1">|</span>
+                        <a href={proj.link} target="_blank" rel="noreferrer" className="text-blue-700 hover:underline">{proj.link.replace(/^https?:\/\/(www\.)?/, '')}</a>
+                      </>
+                    )}
+                  </div>
+                  <div className="whitespace-nowrap">{proj.date}</div>
+                </div>
+                <ul className="list-disc pl-5 mt-1 space-y-0.5">
+                  {proj.description.split('\n').map((bullet, bidx) => (
+                    bullet.trim() && <li key={bidx} className="text-justify">{bullet.replace(/^- /, '')}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
       {/* Education */}
       {formData.education && formData.education.length > 0 && (
         <div className="mb-4">
